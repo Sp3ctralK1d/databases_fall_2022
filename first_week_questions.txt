@@ -1,0 +1,66 @@
+1.6
+ANSWER: Telegram, Instagram, Kaspi.kz, Naimi.kz
+
+1.7
+ANSWER:
+	1. Data redundancy and incosistency.
+	2. There's no query processing engine for file-processing system.
+	3. Structure of stored data.
+	4. No data independence for file-processing system.
+
+1.8
+ANSWER:
+	Physical data independence is a concept that allows us to provide a logical description
+	of the database without the need to specify physical structures.
+	In other words, modification at Physical levels will not result in any changes at 
+	Logical and View levels..	
+
+	It is important because it saves the time on developemnt and guarantees the independence 
+	between physical and conceptual layer of the database.
+
+1.9
+ANSWER:
+	1. Interaction with file manager
+		DB would not be functional if DBMS was not capable of working with file system.
+
+	2. Integrity enforcement
+		Consistency constraints may not be satisfied.		
+
+	3. Security enforcement
+		Security breaches would be a strong issue.
+
+	4. Backup and recovery
+		Data on DB could be lost permanently.		
+	
+	5. Concurrency control
+		Data could be damaged by concurrent transactions.
+
+1.10
+ANSWER:
+	1. Each update of database would require the update of each library.
+	2. SQL is used by many users; application developers, sophisticated users(analysts), database administrators. 
+	It is good to have unified language for all of them.
+
+1.11
+ANSWER:
+	Transaction Isolation concept makes that possible
+
+1.15	
+ANSWER:
+	[TABLE_1] Users
+	uid: UUID DEFAULT uuid_generate_v4()	<------ PRIMARY KEY
+	first_name: varchar(20) DEFAULT	'John'
+	second_name: varchar(20) DEFAULT 'Doe'
+	avatar_url: varchar(max) DEFAULT 'https://static.facebook.com/default_avatar_url.png'
+	slug: varchar(20) DEFAULT null
+
+	[TABLE_2] UserFriends
+	userUid: uuid 	<-------- FOREIGN KEY
+	frientUid: uuid	<-------- FOREIGN KEY
+	BOTH make up a composite primary key
+
+	[TABLE_3] Messages
+	uid: uuid DEFAULT uuid_generate_v4()	<-------- PRIMARY KEY
+	text: longtext NOT NULL 
+	sender: uuid 				<-------- FOREIGN KEY
+	receiver: uuid				<-------- FOREIGN KEY
