@@ -1,0 +1,8 @@
+1. 
+	DDL (Data Definition Language) - language for DEFINING data, in other words it is being used to design and create a schema for tables.
+		create table, 
+		alter table,
+		drop table
+	DML (Data Manipulation Language) - language for MANUPULATING data, in other words to manipulate(read/write) data to/from tables.
+		insert, update, delete 
+	
